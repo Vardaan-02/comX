@@ -69,7 +69,7 @@ export function CompanyPicker() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between bg-white"
         >
           {value
             ? companys.find((company) => company.value === value)?.label

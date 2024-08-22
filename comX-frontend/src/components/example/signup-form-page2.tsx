@@ -9,15 +9,20 @@ import { StatePicker } from "../custom-elements/state-picker";
 import { DistrictPicker } from "../custom-elements/district-picker";
 import { CollagePicker } from "../custom-elements/collage-picker ";
 import { CompanyPicker } from "../custom-elements/company-picker";
+import { useNavigate } from "react-router-dom";
 
 interface PAGEPROPS{
   setSignPage: React.Dispatch<React.SetStateAction<number>>
 }
 
 let SignupFormPage2:React.FC<PAGEPROPS> = ({setSignPage}) =>  {
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
+    navigate("/");
   };
   return (
     <div className="max-w-md w-full rounded-none md:rounded-2xl mb-0">
@@ -70,7 +75,7 @@ let SignupFormPage2:React.FC<PAGEPROPS> = ({setSignPage}) =>  {
         </button>
         <button
           className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] mt-4"
-          onClick={()=>{setSignPage(1)}}
+          onClick={(e)=>{e.preventDefault();setSignPage(1)}}
         >
           back &rarr;
           <BottomGradient />
