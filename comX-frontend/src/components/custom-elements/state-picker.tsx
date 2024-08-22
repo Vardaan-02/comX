@@ -69,7 +69,7 @@ export function StatePicker() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between bg-white"
         >
           {value
             ? states.find((state) => state.value === value)?.label

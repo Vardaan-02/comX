@@ -1,7 +1,7 @@
-import React from 'react'
-
-export const Conversation = () => {
+function Conversation(){
   return (
     <div>Conversation</div>
   )
 }
+
+export default Conversation;
