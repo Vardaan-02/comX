@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
+import { Dashboard } from "../custom-elements/Dashboard";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -78,7 +79,7 @@ export function SidebarMain() {
           </div>
         </SidebarBody>
       </Sidebar>
-      {/* <Dashboard /> */}
+      <Dashboard />
     </div>
   );
 }
