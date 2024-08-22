@@ -47,7 +47,7 @@ export function SidebarMain() {
     <div
       className={cn(
         "rounded-md flex flex-col md:flex-row bg-black flex-1 max-w-7xl mx-auto  overflow-hidden",
-        "h-screen relative float-left" 
+        "h-screen float-left absolute z-50" 
       )}
     >
       <Sidebar open={open} setOpen={setOpen} >
@@ -63,11 +63,11 @@ export function SidebarMain() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: "John Doe",
                 href: "#",
                 icon: (
                   <img
-                    src="https://assets.aceternity.com/manu.png"
+                    src="https://instagram.fvns6-1.fna.fbcdn.net/v/t51.2885-19/453416140_507171278439540_7143833244203360846_n.jpg?_nc_ht=instagram.fvns6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=EHRK6vyrobkQ7kNvgEgqPmg&edm=APHcPcMBAAAA&ccb=7-5&oh=00_AYAYveLpbMzTxIdUZ-0D5j4jqSYWJbIdKdxO5VyZ_6cDAw&oe=66CCE92D&_nc_sid=bef7bc"
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={50}
                     height={50}
@@ -95,7 +95,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-medium text-white whitespace-pre"
       >
-        Acet Labs
+        Com X
       </motion.span>
     </a>
   );
