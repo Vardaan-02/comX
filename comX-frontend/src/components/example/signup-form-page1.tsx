@@ -14,7 +14,7 @@ interface PAGEPROPS{
   setSignPage: React.Dispatch<React.SetStateAction<number>>
 }
 
-let SignupFormPage1:React.FC<PAGEPROPS> = ({setSignPage}) => {
+const SignupFormPage1:React.FC<PAGEPROPS> = ({setSignPage}) => {
   const firstName = useRef(null);
   const lastName = useRef(null);
   const email = useRef(null);
