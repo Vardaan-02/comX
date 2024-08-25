@@ -79,7 +79,7 @@ export function SidebarMain() {
           </div>
         </SidebarBody>
       </Sidebar>
-      <Dashboard />
+      {/* <Dashboard /> */}
     </div>
   );
 }
