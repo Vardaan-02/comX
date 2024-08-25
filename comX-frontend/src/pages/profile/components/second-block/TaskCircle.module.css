@@ -1,0 +1,17 @@
+.TaskCircleGreen{
+    fill:none;
+    stroke:rgb(28 186 186);
+    stroke-width: 10%;
+}
+
+.TaskCircleYellow{
+    fill:none;
+    stroke:rgb(255 183 0);
+    stroke-width: 10%;
+}
+
+.TaskCircleRed{
+    fill:none;
+    stroke:rgb(246 55 55);
+    stroke-width: 10%;
+}

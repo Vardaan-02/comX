@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
-import { Dashboard } from "../custom-elements/Dashboard";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -14,15 +13,15 @@ import { cn } from "@/lib/utils";
 export function SidebarMain() {
   const links = [
     {
-      label: "Dashboard",
-      href: "#",
+      label: "Community",
+      href: "http://localhost:5173/community",
       icon: (
         <IconBrandTabler className="text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Profile",
-      href: "#",
+      href: "http://localhost:5173/profile",
       icon: (
         <IconUserBolt className="text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -46,11 +45,11 @@ export function SidebarMain() {
   return (
     <div
       className={cn(
-        "rounded-md flex flex-col md:flex-row bg-black flex-1 max-w-7xl mx-auto  overflow-hidden",
-        "h-screen float-left absolute z-50" 
+        "rounded-r-md md:flex flex-col md:flex-row bg-black flex-1 max-w-7xl mx-auto overflow-hidden absolute",
+        "h-screen float-left z-100 absolute" 
       )}
     >
-      <Sidebar open={open} setOpen={setOpen} >
+      <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             {open ? <Logo /> : <LogoIcon />}
@@ -67,11 +66,11 @@ export function SidebarMain() {
                 href: "#",
                 icon: (
                   <img
-                    src="https://instagram.fvns6-1.fna.fbcdn.net/v/t51.2885-19/453416140_507171278439540_7143833244203360846_n.jpg?_nc_ht=instagram.fvns6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=EHRK6vyrobkQ7kNvgEgqPmg&edm=APHcPcMBAAAA&ccb=7-5&oh=00_AYAYveLpbMzTxIdUZ-0D5j4jqSYWJbIdKdxO5VyZ_6cDAw&oe=66CCE92D&_nc_sid=bef7bc"
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyTgyN03xlGS7WhS2bC0TJAxXFHm_RWVVe-g&s"
                     width={50}
                     height={50}
                     alt="Avatar"
+                    className="rounded-full"
                   />
                 ),
               }}
@@ -79,7 +78,6 @@ export function SidebarMain() {
           </div>
         </SidebarBody>
       </Sidebar>
-      {/* <Dashboard /> */}
     </div>
   );
 }
