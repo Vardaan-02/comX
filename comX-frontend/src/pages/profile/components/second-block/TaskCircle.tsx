@@ -10,22 +10,23 @@ const TaskCircle: React.FC<PAGEPROPS> = ({ tasks }) => {
   const [width, setWidth] = useState(0);
 
   window.addEventListener("resize", () => {
-    setWidth(parent.current.offsetWidth);
+    if (parent.current.offsetWidth > 400)
+      setWidth(parent.current.offsetWidth / 2);
+    else setWidth(parent.current.offsetWidth);
   });
 
   useEffect(() => {
-    setWidth(parent.current.offsetWidth);
+    if (parent.current.offsetWidth > 400)
+      setWidth(parent.current.offsetWidth / 2);
+    else setWidth(parent.current.offsetWidth);
   }, [parent.current]);
 
   return (
     <>
-      <div className="flex flex-col w-full">
+      <div className="flex w-full">
         <div
-          className="bg-[#262626] rounded-xl xl:max-w-[540px] w-full h-[280px]"
+          className="bg-[#262626] rounded-xl xl:max-w-[540px] w-full h-[280px] flex"
           ref={parent}
-          onClick={() => {
-            console.log(parent.current ? parent.current.offsetWidth : 0);
-          }}
         >
           <svg
             height="280"
@@ -34,27 +35,47 @@ const TaskCircle: React.FC<PAGEPROPS> = ({ tasks }) => {
             xmlns="http://www.w3.org/2000"
           >
             <circle
-              cx="0"
+              cx="50"
               cy="50"
               r="30"
-              stroke-dasharray={`${tasks[0]} 1000`}
+              strokeDasharray={`${tasks[0]} 1000`}
               className={`${css.TaskCircleGreen}`}
             />
             <circle
-              cx="0"
+              cx="50"
               cy="50"
               r="30"
-              stroke-dasharray={`0 ${tasks[0]} ${tasks[1]} 1000`}
+              strokeDasharray={`0 ${tasks[0]} ${tasks[1]} 1000`}
               className={`${css.TaskCircleYellow}`}
             />
             <circle
-              cx="0"
+              cx="50"
               cy="50"
               r="30"
-              stroke-dasharray={`0 ${tasks[0]+tasks[1]} ${tasks[2]} 50 1000`}
+              strokeDasharray={`0 ${tasks[0] + tasks[1]} ${tasks[2]} 50 1000`}
               className={`${css.TaskCircleRed}`}
             />
           </svg>
+          <div className="flex justify-center items-center w-[50%] flex-col gap-6 mr-4 md:mr-0">
+            <div className="w-[120px] bg-[#353535] rounded-sm px-8 py-1">
+              <h1 className="text-sm font-bold flex justify-center items-center text-[#1cbaba]">
+                Completed
+              </h1>
+              <p className="flex justify-center items-center">{tasks[0]}</p>
+            </div>
+            <div className="w-[120px] bg-[#353535] rounded-sm px-8 py-1">
+              <h1 className="text-sm font-bold flex justify-center items-center text-[#ffb700]">
+                Pending
+              </h1>
+              <p className="flex justify-center items-center">{tasks[1]}</p>
+            </div>
+            <div className="w-[120px] bg-[#353535] rounded-sm px-8 py-1">
+              <h1 className="text-sm font-bold flex justify-center items-center text-[#f63737]">
+                Missing
+              </h1>
+              <p className="flex justify-center items-center">{tasks[2]}</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
