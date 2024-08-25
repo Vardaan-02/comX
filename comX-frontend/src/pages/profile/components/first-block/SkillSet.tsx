@@ -5,8 +5,8 @@ interface PAGEPROPS {
 const SkillSet: React.FC<PAGEPROPS> = ({ skills }) => {
   return (
     <>
-      <div className="h-[30%] flex flex-col items-start pt-8 pl-8 gap-2">
-        <div className="w-[85%] flex justify-between items-center">
+      <div className="flex flex-col items-start p-8 gap-2 rounded-b-xl bg-[#262626] w-full">
+        <div className="flex justify-between items-center w-full">
           <h1 className="font-xs font-bold">SKILLS</h1>
           <button className="bg-green-600 px-4 py-2 text-gray-300 font-bold rounded-l rounded-r flex items-center justify-center hover:bg-green-500 hover:text-white transition">Add Skills</button>
         </div>
@@ -59,6 +59,7 @@ const SkillSet: React.FC<PAGEPROPS> = ({ skills }) => {
           ))}
         </div>
       </div>
+      <div className="lg:h-8 w-full text-xs text-black">hello</div>
     </>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
-import { Dashboard } from "../custom-elements/Dashboard";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -15,14 +14,14 @@ export function SidebarMain() {
   const links = [
     {
       label: "Community",
-      href: "#",
+      href: "http://localhost:5173/community",
       icon: (
         <IconBrandTabler className="text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Profile",
-      href: "#",
+      href: "http://localhost:5173/profile",
       icon: (
         <IconUserBolt className="text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -46,11 +45,11 @@ export function SidebarMain() {
   return (
     <div
       className={cn(
-        "rounded-md flex flex-col md:flex-row bg-black flex-1 max-w-7xl mx-auto  overflow-hidden",
-        "h-screen float-left absolute z-50" 
+        "rounded-r-md md:flex flex-col md:flex-row bg-black flex-1 max-w-7xl mx-auto overflow-hidden absolute",
+        "h-screen float-left z-100 absolute" 
       )}
     >
-      <Sidebar open={open} setOpen={setOpen} >
+      <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             {open ? <Logo /> : <LogoIcon />}

@@ -41,11 +41,9 @@ const FirstBlock: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[#262626] min-h-screen w-[25%] text-white rounded-lg">
+      <div className="bg-black text-white rounded-lg w-[97%] lg:max-w-[400px] z-0 md:z-auto">
         <Top info={info}></Top>
-        <hr className="ml-[3%] h-px mt-8 w-[94%]"></hr>
         <LinkBelowProfile links={links} />
-        <hr className="ml-[3%] h-px mt-8 w-[94%]"></hr>
         <SkillSet skills={skills}></SkillSet>
       </div>
     </>
