@@ -25,11 +25,11 @@ const TaskCircle: React.FC<PAGEPROPS> = ({ tasks }) => {
     <>
       <div className="flex w-full">
         <div
-          className="bg-[#262626] rounded-xl xl:max-w-[540px] w-full h-[280px] flex"
+          className="bg-[#262626] rounded-xl xl:max-w-[540px] w-full h-[270px] flex"
           ref={parent}
         >
           <svg
-            height="280"
+            height="270"
             width={width}
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000"

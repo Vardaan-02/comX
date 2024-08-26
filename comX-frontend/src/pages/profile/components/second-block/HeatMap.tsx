@@ -18,25 +18,26 @@ const HeatMap: React.FC<PAGEPROPS> = ({ startDate, endDate, dataValue }) => {
   });
 
   const colors = [
-    "#363636",
-    "#013e06",
-    "#026b0a",
-    "#04990f",
-    "#05c413",
-    "#01f714",
-  ];
+    "#363636",  // Deep Forest Green
+    "#016620",  // Pine Green
+    "#109932",  // Dark Green
+    "#28C244",  // Medium Green
+    "#66cc66",  // Pastel Green
+    "#7FE18B",  // Mint Green
+    "#016620"   // Honeydew
+  ]
 
   return (
     <>
       <div className="flex flex-col w-full py-8">
-        <div className="px-8 py-4 bg-[#262626] rounded-xl w-[97%] h-[280px] pt-8 text-[12px] sm:text-lg">
+        <div className="px-8 py-4 bg-[#262626] rounded-xl w-[96%] h-[250px] pt-6 text-[12px] sm:text-lg">
           <div className="flex justify-start items-center ml-12">
             <div className="text-white flex">
               <p className="font-extrabold mr-1">100</p>
               <p className="">Task Done in past one year .</p>
             </div>
           </div>
-          <div className="flex justify-center items-center mt-8">
+          <div className="flex justify-center items-center mt-4">
             <div className="flex flex-col text-white gap-5 md:gap-3 justify-center items-end pr-4">
               <p>Mon</p>
               <p>Wed</p>
@@ -48,12 +49,12 @@ const HeatMap: React.FC<PAGEPROPS> = ({ startDate, endDate, dataValue }) => {
             >
               {calenderGrid.map((day, index) => {
                 return (
-                  <div
+                  <abbr
                     key={index}
-                    className={`h-4 w-4 bg-[${
-                      colors[dataValue[index]]
-                    }] rounded-sm`}
-                  ></div>
+                    className={`h-4 w-4 rounded-sm`}
+                    style={{ background: `${colors[dataValue[index]]}`,}}
+                    title={`${dataValue[index]} Tasks done on ${day}`}
+                  ></abbr>
                 );
               })}
             </div>
