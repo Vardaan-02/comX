@@ -1,3 +1,5 @@
+import { EditProfile } from "./EditProfile";
+
 interface PAGEPROPS {
   info:any
 }
@@ -17,9 +19,7 @@ const Top: React.FC<PAGEPROPS> = ({info}) => {
             <h1 className="font-bold">{info.firstName}</h1>
             <h1 className="font-semibold text-xs">{info.userName}</h1>
           </div>
-          <button className="sm:text-xs lg:text-s h-5 w-full bg-green-600 pt-5 pb-5 pl-7 pr-7 text-gray-300 font-bold rounded-l rounded-r flex items-center justify-center hover:bg-green-500 hover:text-white transition">
-            Edit Profile
-          </button>
+          <EditProfile />
         </div>
       </div>
     </>
