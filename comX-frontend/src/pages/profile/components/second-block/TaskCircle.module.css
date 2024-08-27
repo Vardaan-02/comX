@@ -1,17 +1,23 @@
 .TaskCircleGreen{
     fill:none;
-    stroke:rgb(28 186 186);
-    stroke-width: 10%;
+    stroke:#1CBABA;
+    stroke-width: 8%;
+    transition: 0.3s;
+    z-index: 10;
 }
 
 .TaskCircleYellow{
     fill:none;
-    stroke:rgb(255 183 0);
-    stroke-width: 10%;
+    stroke:#FFB700;
+    stroke-width: 8%;
+    transition: 0.3s;
+    z-index: 10;
 }
 
 .TaskCircleRed{
     fill:none;
-    stroke:rgb(246 55 55);
-    stroke-width: 10%;
+    stroke:#F63737;
+    stroke-width: 8%;
+    transition: 0.3s;
+    z-index: 10;
 }
