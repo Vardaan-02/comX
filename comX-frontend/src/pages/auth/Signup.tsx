@@ -6,8 +6,8 @@ import css from "./Signup.module.css";
 
 function Signup() {
   const [signPage, setSignPage] = useState(0);
-  const page1 = useRef(null);
-  const page2 = useRef(null);
+  const page1:any = useRef(null);
+  const page2:any = useRef(null);
 
   useEffect(() => {
     if (signPage === 2) {
@@ -17,7 +17,7 @@ function Signup() {
       page2.current.style.scale = `calc(100%)`;
       setTimeout(() => {
         page1.current.style.display = "none";
-      }, "1000");
+      }, 1000);
       
     } else if (signPage == 1) {
       page2.current.style.animation = `1s ease-in 0s 1 ${css.zoomOut2}`;

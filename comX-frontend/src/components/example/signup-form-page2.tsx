@@ -25,7 +25,7 @@ let SignupFormPage2:React.FC<PAGEPROPS> = ({setSignPage}) =>  {
     navigate("/");
   };
   return (
-    <div className="max-w-md w-full rounded-none md:rounded-2xl mb-0">
+    <div className="max-w-md w-full rounded-none md:rounded-2xl mt-36 sm:mt-0">
       <h2 className="font-bold text-xl text-neutral-200">
         About You
       </h2>

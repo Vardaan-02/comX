@@ -69,7 +69,7 @@ export function StatePicker() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between bg-white"
+          className="md:w-[200px] justify-between bg-white"
         >
           {value
             ? states.find((state) => state.value === value)?.label
@@ -77,7 +77,7 @@ export function StatePicker() {
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 max-h-[200px] overflow-y-hidden relative">
+      <PopoverContent className="w-[200px] p-0 min-w-[240px] overflow-y-hidden relative">
         <Command>
           <CommandInput placeholder="Search state..." className="h-9" />
           <CommandList>
