@@ -69,7 +69,7 @@ export function DistrictPicker() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between bg-white"
+          className="md:w-[200px] justify-between bg-white"
         >
           {value
             ? districts.find((district) => district.value === value)?.label

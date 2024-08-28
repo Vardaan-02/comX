@@ -1,5 +1,5 @@
 function CreateCommunity(){
-    return <div>Create Community</div>
+    return <div className="h-screen w-screen bg-white">Create Community</div>
 }
 
 export default CreateCommunity;
