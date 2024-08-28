@@ -12,9 +12,9 @@ const Badges: React.FC<PAGEPROPS> = ({ badges }) => {
                 <p className="font-bold text-2xl pl-1">{badges.length}</p>
             </div>
             <div className="h-[40%] w-[100%] flex flex-row justify-center items-center gap-4">
-                {badges.length>2 && <img src={`${badges[badges.length-2].link}`} className="h-[80%] hover:h-[100%] transition-all"/>}
+                {badges.length>2 && <img src={`${badges[badges.length-2].link}`} className="h-[100%] hover:h-[120%] transition-all"/>}
                 <img src={`${badges[badges.length-1].link}`} className="h-[100%] hover:h-[120%] transition-all"/>
-                {badges.length>1 && <img src={`${badges[badges.length-3].link}`} className="h-[80%] hover:h-[100%] transition-all"/>}
+                {badges.length>1 && <img src={`${badges[badges.length-3].link}`} className="h-[100%] hover:h-[120%] transition-all"/>}
             </div>
             <div className="h-[30%] flex flex-col justify-center items-start">
                 <p className="text-sm font-semibold text-[#999]">Most Recent Badge</p>

@@ -17,7 +17,7 @@ import GameHome from "./pages/gaming/GameHome.tsx";
 import Game1 from "./pages/gaming/Game1.tsx";
 import Game2 from "./pages/gaming/Game2.tsx";
 import Game3 from "./pages/gaming/Game3.tsx";
-import { Dashboard } from "./components/custom-elements/Dashboard.tsx";
+import DashBoard from "./pages/community/DashBoard.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -27,11 +27,11 @@ const router = createBrowserRouter([
     path: "/community",
     element: <Community />,
     children: [
-      { path: "/community/create", element: <CreateCommunity /> },
-      { path: "/community/dashboard", element: <Dashboard /> },
-      { path: "/community/teams", element: <SubCommunity /> },
-      { path: "/community/timeline", element: <Calendar /> },
-      { path: "/community/member", element: <Conversation /> },
+      { path: "create", element: <CreateCommunity /> },
+      { path: "dashboard", element: <DashBoard /> },
+      { path: "teams", element: <SubCommunity /> },
+      { path: "timeline", element: <Calendar /> },
+      { path: "member", element: <Conversation /> },
     ],
   },
   { path: "/profile", element: <Profile /> },
@@ -40,10 +40,10 @@ const router = createBrowserRouter([
     path: "/gaming",
     element: <BasicLayoutGame />,
     children: [
-      { path: "/gaming/home", element: <GameHome/> },
-      { path: "/gaming/game1", element: <Game1/> },
-      { path: "/gaming/game2", element: <Game2/> },
-      { path: "/gaming/game3", element: <Game3/> },
+      { path: "home", element: <GameHome/> },
+      { path: "game1", element: <Game1/> },
+      { path: "game2", element: <Game2/> },
+      { path: "game3", element: <Game3/> },
     ],
   },
 ]);
