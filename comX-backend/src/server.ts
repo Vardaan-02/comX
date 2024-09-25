@@ -1,5 +1,8 @@
 const Express = require('express');
 import {Response, Request} from "express";
+require('global-agent/bootstrap');
+
+process.env.GLOBAL_AGENT_HTTP_PROXY = 'http://172.31.2.3:8080';
 
 const app = Express();
 
