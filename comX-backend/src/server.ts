@@ -1,8 +1,23 @@
 const Express = require('express');
 import {Response, Request} from "express";
 require('global-agent/bootstrap');
-
 process.env.GLOBAL_AGENT_HTTP_PROXY = 'http://172.31.2.3:8080';
+
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
+async function main() {
+    await prisma.user.create({
+        data:{
+            email: "abc@abc.com",
+            name: "abc",
+            username: "abc",
+            password: "abc",
+            designation: "developer"
+        }
+    })    
+}
+main();
 
 const app = Express();
 
