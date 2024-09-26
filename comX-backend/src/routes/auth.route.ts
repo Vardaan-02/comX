@@ -12,9 +12,9 @@ const router = Router();
 router.post("/register", register);
 router.post("/login", login);
 router.get("/logout", logout);
-router.get("/send-email-otp", send_email_otp);
+router.post("/send-email-otp", send_email_otp);
 router.post("/verify-email-otp", verify_email_otp);
-router.get("/send-forgot-password-otp", send_forgot_password_otp);
+router.post("/send-forgot-password-otp", send_forgot_password_otp);
 router.post("/verify-forgot-password-otp", verify_forgot_password_otp);
 
 module.exports = router;
