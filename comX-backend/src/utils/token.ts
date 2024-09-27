@@ -8,16 +8,31 @@ const create_token = async (res: Response, user: User) => {
     res.cookie("token", token, {maxAge:1000 * 60 * 60 * 24 * 30, httpOnly: true});
 }
 
-const verify_token = async (req: Request) => {
+const verify_token = async (req: Request, prisma: any) => {
     const authenticatedToken = req.cookies.token;
-        if(authenticatedToken){
-            const decode = await jwt.verify(authenticatedToken, process.env.TOKEN_SECRET);
-            // check if decode user exists only if it exists we return true else false
-            return true;
+    if (authenticatedToken) {
+        try {
+            const decoded: any = await jwt.verify(authenticatedToken, process.env.JWT_SECRET);
+            
+            // Fetch the user from the database using Prisma
+            const user = await prisma.user.findUnique({
+                where: {
+                    id: decoded.userId
+                }
+            });
+
+            if (user) {
+                return true;  // User exists and token is valid
+            } else {
+                return false; // User not found
+            }
+        } catch (error) {
+            return false; // Token verification failed
         }
-        else{
-            return false;
-        }
-}
+    } else {
+        return false; // No token found
+    }
+};
+
 
 export {create_token, verify_token};

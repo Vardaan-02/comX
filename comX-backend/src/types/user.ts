@@ -4,6 +4,8 @@ export type User = {
     username: string;
     id: number;
     designation: string;
-    isVerified: Boolean;
-    password ?: string
+    isVerified: Boolean | null;
+    otp?: string | null;
+    isOtpValid?: Date | null; 
+    password?: string | null;
 };
