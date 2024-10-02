@@ -1,1 +1,2 @@
 # comX
+pick, readonly, partial

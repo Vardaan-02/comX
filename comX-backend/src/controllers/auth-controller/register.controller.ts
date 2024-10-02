@@ -18,6 +18,7 @@ export const register = async (req: Request, res: Response) => {
     if (!name || !username || !email || !password || !designation) {
         return responseCodes.clientError.notFound(res, "All fields are required");
     }
+    // add a function to check strength of password
     try {
         const user = await prisma.user.create({
             data: {
