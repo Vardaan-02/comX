@@ -1,7 +1,7 @@
 const express = require('express');
 import {Response, Request, urlencoded} from "express";
-require('global-agent/bootstrap');
-process.env.GLOBAL_AGENT_HTTP_PROXY = 'http://172.31.2.3:8080';
+// require('global-agent/bootstrap');
+// process.env.GLOBAL_AGENT_HTTP_PROXY = 'http://172.31.2.3:8080';
 
 const app = express();
 app.use(express.json());
