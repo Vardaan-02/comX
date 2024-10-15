@@ -21,6 +21,7 @@ export const UserDataSchema = z
       ), // Require at least one special character
     confirmPassword: z.string(),
     post: z.any(),
+    username:z.any(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
